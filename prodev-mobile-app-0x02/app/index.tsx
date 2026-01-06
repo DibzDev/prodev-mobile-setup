@@ -5,14 +5,14 @@ export default function Index() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        {/* Use a colored background if image fails to load */}
-        <View style={[styles.background, { backgroundColor: "#1e3a8a" }]}>
+        <ImageBackground
+          source={require("@/assets/images/background-image.png")}
+          style={styles.background}
+          resizeMode="cover"
+        >
           <View style={styles.container}>
             <View style={styles.companyLogo}>
-              {/* Show placeholder if logo fails to load */}
-              <View style={{ width: 100, height: 100, backgroundColor: "#ef4444", borderRadius: 10, justifyContent: "center", alignItems: "center" }}>
-                <Text style={{ color: "white", fontWeight: "bold" }}>LOGO</Text>
-              </View>
+              <Image source={require("@/assets/images/Logo.png")} />
             </View>
 
             <View style={styles.textGroup}>
@@ -36,7 +36,7 @@ export default function Index() {
               </View>
             </View>
           </View>
-        </View>
+        </ImageBackground>
       </SafeAreaView>
     </SafeAreaProvider>
   );
